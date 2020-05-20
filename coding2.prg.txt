@@ -1,0 +1,75 @@
+3 program
+
+
+#include <stdio.h> 
+bool find3Numbers(int A[], int arr_size, int sum) 
+{ 
+    int l, r; 
+int t;
+for int(t=0;t<l;t++)
+{
+    for (int i = 0; i < arr_size - 2; i++) { 
+        for (int j = i + 1; j < arr_size - 1; j++) { 
+            for (int k = j + 1; k < arr_size; k++) { 
+                if (A[i] + A[j] + A[k] == sum) { 
+                    printf("%d, %d, %d", 
+                           A[i], A[j], A[k]); 
+                    return true; 
+                } 
+            } 
+        } 
+    } 
+
+    return false; 
+} 
+int main() 
+{ 
+    int A[50];
+cin>>A[i];
+    int sum;
+    int arr_size = sizeof(A) / sizeof(A[0]); 
+    find3Numbers(A, arr_size, sum); 
+    return 0; 
+} 
+
+
+
+4 program
+
+#include <stdio.h>
+int check_anagram(char [], char []);
+int main()
+{
+    char a[100], b[100];
+    printf("Enter two strings : \n");
+    gets(a);
+    gets(b);
+
+    if (check_anagram(a, b) == 1)
+        printf("%s and %s strings are anagrams\n",a,b);
+    else
+        printf("%s and %s strings are not anagrams\n");
+
+    return 0;
+}
+int check_anagram(char a[], char b[])
+{
+    int first[26] = {0}, second[26] = {0}, c=0;
+    while (a[c] != '\0')
+    {
+        first[a[c]-'a']++;
+        c++;
+    }
+    c = 0;
+    while (b[c] != '\0')
+    {
+        second[b[c]-'a']++;
+        c++;
+    }
+    for (c = 0; c < 26; c++)
+    {
+        if (first[c] != second[c])
+            return 0;
+    }
+    return 1;
+}
