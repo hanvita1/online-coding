@@ -1,0 +1,98 @@
+ #include <stdio.h>
+#include <string.h> 
+void swap (char *x, char *y)
+{
+    char temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+void permute(char *a, int i, int n)
+{
+    int j;
+    if (i == n)
+        printf("%s\n", a);
+    else {
+        for (j = i; j <= n; j++)
+        {
+            swap((a + i), (a + j));
+            permute(a, i + 1, n);
+            swap((a + i), (a + j)); 
+        }
+    }
+}
+ 
+int main()
+{
+    char a[20];
+    int n;
+    printf("Enter a string: ");
+    scanf("%s", a);
+    n = strlen(a);
+    printf("Permutaions:\n"); 
+    permute(a, 0, n - 1);
+    getchar();
+    return 0;
+}
+[18:14, 5/26/2020] Shweethat Alva's: #include <bits/stdc++.h> 
+using namespace std; 
+void cntArray(int A[], int N) 
+{ 
+ 
+    int result = 0; 
+  
+    for (int i = 0; i < N; i++) { 
+          result++; 
+        int current_value = A[i]; 
+  
+        for (int j = i + 1; j < N; j++) { 
+  
+            if (A[j] == current_value) { 
+                result++; 
+            } 
+        } 
+    } 
+
+    cout << result << endl; 
+} 
+  
+int main() 
+{ 
+    int A[] = { 1, 2, 1, 5, 2 }; 
+    int N = sizeof(A) / sizeof(int); 
+  
+    cntArray(A, N); 
+  
+    return 0; 
+}
+ for i in range(0,51):
+    if(i%2!=0&i%3!=0):
+        print(i)
+ n=int(input("Enter number:"))
+temp=n
+rev=0
+while(n>0):
+    dig=n%10
+    rev=rev*10+dig
+    n=n//10
+if(temp==rev):
+    print("The number is a palindrome!")
+else:
+    print("The number isn't a palindrome!")
+n=int(input("Enter number:"))
+count=0
+while(n>0):
+    count=count+1
+    n=n//10
+print("The number of digits in the number are:",count)
+n=int(input("Enter a number: "))
+a=[]
+for i in range(1,n+1):
+    print(i,sep=" ",end=" ")
+    if(i<n):
+        print("+",sep=" ",end=" ")
+    a.append(i)
+print("=",sum(a))
+ 
+print()
