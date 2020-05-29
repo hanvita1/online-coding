@@ -1,0 +1,32 @@
+s = str(input("Enter the string\n"))
+c =""
+for val in s:
+  if(val=='a' or val=='e' or val=='o' or val=='u' or val=='i'):
+    continue
+  else:
+    c = c+ str(val)
+print(c)
+
+Output:
+Enter the string
+I love python
+I lv pythn
+
+
+
+
+s = str(input("Enter the string"))
+c=0
+v=0
+for i in s:
+  if(i.islower()):
+    c = c+1
+  if(i.isupper()):
+    v = v+1
+print("Upper case characters : ",v)
+print("Lower case characters : ",c)
+
+Output:
+Enter the stringThis is Python
+Upper case characters :  2
+Lower case characters :  10
