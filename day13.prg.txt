@@ -1,0 +1,31 @@
+def combined_str(s1,s2):
+  if len(s1)>len(s2):
+    a = s2+s1+s2
+    print("'{}'".format(a))
+  else:
+    a = s1+s2+s1
+    print("'{}'".format(a))     
+s1= str(input("Enter the 1st string\n"))
+s2= str(input("Enter the 2nd string\n"))
+combined_str(s1,s2)
+
+
+Output:
+Enter the 1st string
+Hi
+Enter the 2nd string
+Hello
+'HiHelloHi'
+
+
+
+ I= input("Enter the numbers : ")
+list = l.split(",")
+tuple = tuple(list)
+print(list,"\n",tuple)
+
+
+Output : 
+Enter the numbers : 1,2,3,4
+['1', '2', '3', '4'] 
+('1', '2', '3', '4')
