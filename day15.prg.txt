@@ -1,0 +1,20 @@
+ items=[n for n in input("enter the string separete by hyphen\n").split('-')]
+items.sort()
+print('-'.join(items))
+
+output:
+enter the string separete by hyphen
+python-OS-OR-sscd-cnsc
+cnsc-OR-OS-python-sscd
+
+ s=str(input("enter the string"))
+n=int(input("enter the nth index to remove"))
+first_part = s[:n] 
+last_part = s[n+1:]
+res=first_part + last_part
+print(res)
+
+output:
+enter the stringpython
+enter the nth index to remove3
+pyton
