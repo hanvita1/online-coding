@@ -1,0 +1,134 @@
+ public class MinMax {  
+    //Represents the node of list.  
+    public class Node{  
+        int data;  
+        Node next;  
+        public Node(int data) {  
+            this.data = data;  
+        }  
+    }  
+      
+    //Declaring head and tail pointer as null.  
+    public Node head = null;  
+    public Node tail = null;  
+      
+    //This function will add the new node at the end of the list.  
+    public void add(int data){  
+        //Create new node  
+        Node newNode = new Node(data);  
+        //Checks if the list is empty.  
+        if(head == null) {  
+             //If list is empty, both head and tail would point to new node.  
+            head = newNode;  
+            tail = newNode;  
+            newNode.next = head;  
+        }  
+        else {  
+            //tail will point to new node.  
+            tail.next = newNode;  
+            //New node will become new tail.  
+            tail = newNode;  
+            //Since, it is circular linked list tail will points to head.  
+            tail.next = head;  
+        }  
+    }  
+      
+    //Finds out the minimum value node in the list  
+    public void minNode() {  
+        Node current = head;  
+        //Initializing min to initial node data  
+        int min = head.data;  
+        if(head == null) {  
+            System.out.println("List is empty");  
+        }  
+        else {  
+             do{  
+                 //If current node's data is smaller than min  
+                 //Then replace value of min with current node's data  
+                 if(min > current.data) {  
+                     min = current.data;  
+                 }  
+                 current= current.next;  
+            }while(current != head);  
+          
+            System.out.println("Minimum value node in the list: "+ min);  
+        }  
+    }  
+          
+    //Finds out the maximum value node in the list  
+    public void maxNode() {  
+        Node current = head;  
+        //Initializing max to initial node data  
+        int max = head.data;  
+        if(head == null) {  
+            System.out.println("List is empty");  
+        }  
+        else {  
+             do{  
+                 //If current node's data is greater than max  
+                 //Then replace value of max with current node's data  
+                 if(max < current.data) {  
+                     max = current.data;  
+                 }  
+                 current= current.next;  
+                }while(current != head);  
+               
+            System.out.println("Maximum value node in the list: "+ max);  
+        }  
+    }  
+                  
+    public static void main(String[] args) {  
+        MinMax cl = new MinMax();  
+        //Adds data to the list  
+        cl.add(5);  
+        cl.add(20);  
+        cl.add(10);  
+        cl.add(1);  
+        //Prints the minimum value node in the list  
+        cl.minNode();  
+        //Prints the maximum value node in the list  
+        cl.maxNode();  
+    } 
+
+ #include<stdio.h>
+#include<limits.h>
+
+int main()
+{
+    int m, n, sum = 0;
+    printf(“\nEnter the order of the matrix : “);
+    scanf(“%d %d”,&m,&n);
+    int i, j;
+    int mat[m][n];
+    printf(“\nInput the matrix elements\n”);
+    for(i = 0; i < m; i++)
+    {
+        for(j = 0; j < n; j++)
+            scanf(“%d”,&mat[i][j]);
+    }
+
+    printf(“\nBoundary Matrix\n”);
+    for(i = 0; i < m; i++)
+    {
+        for(j = 0; j < n; j++)
+        {
+            if (i == 0 || j == 0 || i == n – 1 || j == n – 1)
+            {
+                printf(“%d “, mat[i][j]);
+                sum = sum + mat[i][j];
+            }
+            else
+                printf(” “);
+        }
+        printf(“\n”);
+    }
+    printf(“\nSum of boundary is %d”, sum);
+}
+
+ def length(a):
+    if len(a)==0:
+        return 0
+    else:
+        return 1+length(a[1:])
+a = [1,7,8,9,2,3,5,6,0,12,5,6,7,6,9,0,1,2]
+print("The Length Of The List Is: ", length(a))
